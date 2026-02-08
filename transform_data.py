@@ -19,7 +19,7 @@ def transform_smart_city_data():
     output_file = f"data/transformed/velib_cleaned_{datetime.now().strftime('%Y%m%d')}.parquet"
 
     # 3. DuckDB Transformation Logic
-    # We use SQL to select specific columns and clean them on the fly
+    # select specific columns and clean them
     try:
         con = duckdb.connect()
         

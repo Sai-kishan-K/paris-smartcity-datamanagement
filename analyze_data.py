@@ -6,7 +6,7 @@ from datetime import datetime
 def run_smart_city_analytics():
     print(f"[{datetime.now()}] Running Smart City Analytics...")
     
-    # 1. Locate the latest transformed Parquet file
+    # 1. Locate the latest transformed Parcuet file
     list_of_files = glob.glob('data/transformed/*.parquet')
     if not list_of_files:
         print("No transformed data found. Please run Phase 3 first!")

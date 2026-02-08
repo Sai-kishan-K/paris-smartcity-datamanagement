@@ -13,19 +13,17 @@ def fetch_smart_city_data():
         response = requests.get(URL)
         response.raise_for_status()
         data = response.json()
-        
-        # The API returns a list of dictionaries
         df = pd.DataFrame(data)
         
         # Create a raw data directory if it doesn't exist
         os.makedirs('data/raw', exist_ok=True)
         
-        # Save as a timestamped CSV for our 'Landing Zone'
+        # Save as CSV file for our 'Landing Zone'
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"data/raw/velib_{timestamp}.csv"
         df.to_csv(filename, index=False)
         
-        print(f"✅ Success! Ingested {len(df)} records into {filename}")
+        print(f"Success! Ingested {len(df)} records into {filename}")
         
     except Exception as e:
         print(f"Error during ingestion: {e}")
