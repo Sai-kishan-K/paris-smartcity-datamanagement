@@ -1,0 +1,4 @@
+
+# Data (Ignore all data, but keep the folder structure)
+data/raw/*.csv
+data/transformed/*.parquet
