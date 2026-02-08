@@ -92,7 +92,7 @@ chmod +x run_pipeline.sh
 ./run_pipeline.sh
 ```
 ##### 3. Project Structure
-
+```bash
 .
 ├── data/
 │   ├── raw/           # Raw CSV extracts (Bronze)
@@ -102,6 +102,7 @@ chmod +x run_pipeline.sh
 ├── analyze_data.py    # SQL Analytics logic
 ├── run_pipeline.sh    # Orchestration Script
 └── docker-compose.yml # Infrastructure as Code
+```
 
 ###### 4. Key Analytics 
 🚲 Top 5 Neighborhoods for Electric Bike Availability
