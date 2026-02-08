@@ -1,0 +1,11 @@
+# version: '3.8'
+services:
+  data_engine:
+    build: .
+    container_name: paris_smart_city_data_engine
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: tail -f /dev/null
