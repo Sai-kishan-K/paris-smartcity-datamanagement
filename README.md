@@ -84,13 +84,13 @@ Initial Docker networking errors slowed down development.
 ```bash
 git clone https://github.com/yourusername/paris-smart-city.git
 cd paris-smart-city
-
+```
 
 ##### 2. Clone the Project
 ```bash
 chmod +x run_pipeline.sh
 ./run_pipeline.sh
-
+```
 ##### 3. Project Structure
 
 .
