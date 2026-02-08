@@ -1,30 +1,30 @@
 # 🚴 Paris Smart City: Real-Time IoT Data Pipeline
 
-## 📌 Problem Statement
+##  Problem Statement
 Smart cities generate massive amounts of data from IoT sensors (bikes, traffic lights, air quality). However, this data is often "messy":
 
 - **High Velocity:** Data changes every minute, making manual tracking impossible.  
 - **Schema Drift:** API providers often change column names without notice (e.g., changing `last_reported` to `duedate`), which breaks traditional data pipelines.  
 - **Storage Inefficiency:** Storing millions of rows in CSV format is slow and consumes excessive disk space.  
 
-### 🎯 The Goal
+###  The Goal
 Build a resilient, automated ELT (Extract, Load, Transform) pipeline that handles these changes gracefully while providing actionable city-wide insights.
 
 ---
 
-## 🏗️ The Solution: A 3-Tier Data Architecture
+## The Solution: A 3-Tier Data Architecture
 We implemented a **Medallion Architecture (Bronze, Silver, Gold layers)** to ensure data reliability:
 
-### 🥉 Ingestion (Bronze)
+###  Ingestion (Bronze)
 - A Python-based extractor that pulls live JSON data from the Paris Open Data API  
 - Lands data as timestamped CSVs  
 
-### 🥈 Transformation (Silver)
+###  Transformation (Silver)
 - Uses **DuckDB** to process raw CSVs into Parquet files  
 - Handles schema mapping and data type casting  
 - Uses **ZSTD compression** for ~10x faster queries  
 
-### 🥇 Analytics (Gold)
+###  Analytics (Gold)
 - SQL-rich analytics layer  
 - Calculates neighborhood-level metrics  
 - Provides system-wide health monitoring  
@@ -70,9 +70,9 @@ Initial Docker networking errors slowed down development.
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### ✅ Prerequisites
+###  Prerequisites
 - Docker Desktop *(for containerized mode)*  
 - Python 3.11+ *(for native mode)*  
 
@@ -86,7 +86,7 @@ git clone https://github.com/yourusername/paris-smart-city.git
 cd paris-smart-city
 ```
 
-##### 2. Clone the Project
+##### 2. Run the Pipeline
 ```bash
 chmod +x run_pipeline.sh
 ./run_pipeline.sh
@@ -105,8 +105,8 @@ chmod +x run_pipeline.sh
 ```
 
 ###### 4. Key Analytics 
-🚲 Top 5 Neighborhoods for Electric Bike Availability
+ - Top 5 Neighborhoods for Electric Bike Availability
 
-📈 Real-Time Capacity Ratios (Full vs Empty Stations)
+ - Real-Time Capacity Ratios (Full vs Empty Stations)
 
-🏥 System Health Monitoring (Mechanical vs E-bike Distribution)
+ - System Health Monitoring (Mechanical vs E-bike Distribution)
